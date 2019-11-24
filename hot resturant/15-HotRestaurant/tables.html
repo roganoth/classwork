@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hot Restaurant - View</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a5a0fef831.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        ​ .jumbotron {
+            text-align: center;
+        }
+
+        ​ h1 {
+            font-size: 4rem;
+        }
+
+        ​ h3 {
+            font-size: 2rem;
+            font-weight: normal;
+            padding: 2rem;
+        }
+
+        ​ .fas {
+            padding: 0 0.5rem 0 0;
+        }
+
+        ​ .blue {
+            border-color: blue;
+            background-color: blue;
+        }
+
+        ​ .blue:hover {
+            background-color: darkblue;
+            border-color: darkblue;
+        }
+
+        ​ a {
+            padding: 0 1rem;
+        }
+
+        ​ .wrapper {
+            border: 1px solid gray;
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        ​ .home {
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        ​ .fa-home {
+            color: black;
+            padding: 0;
+        }
+
+        ​ .row>.col>span>a:nth-of-type(1),
+        .row>.col>span>a:nth-of-type(2) {
+            border-right: 1px solid black;
+        }
+
+        ​ h4 {
+            padding-top: 1rem;
+        }
+
+        ​ .resNum,
+        .waitNum {
+            border-right: 1px solid black;
+        }
+    </style>
+</head>
+​
+
+<body>
+    ​
+    <div class="container">
+        <div class="jumbotron">
+            <h1><i class="fas fa-fire"></i>Hot Restaurant</h1>
+            <hr>
+            <h3>We only have 5 tables! Book your seat before they all are gone!</h3>
+            <a href="/add"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span>Make a
+                    Reservation</button></a>
+            <a href="/"><button class="btn btn-danger btn-lg"><span class="fas fa-home"></span> </button></a>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="wrapper">
+                    <h4>Current Reservations</h4>
+                    <hr>
+                    <div class="resCard">
+                        <span class="resNum"></span>
+                        <span class="resID"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="wrapper">
+                    <h4>Waiting List</h4>
+                    <hr>
+                    <div class="waitCard">
+                        <span class="waitNum"></span>
+                        <span class="waitID"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+​   <script>
+</script>
+
+</html>

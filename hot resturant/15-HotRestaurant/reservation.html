@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hot Resturant</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        ​ .jumbotron {
+            text-align: center;
+        }
+
+        ​ h1 {
+            font-size: 4rem;
+        }
+
+        ​ h3 {
+            font-size: 2rem;
+            font-weight: normal;
+            padding: 2rem;
+        }
+
+        ​ .fas {
+            padding: 0 0.5rem 0 0;
+        }
+
+        ​ .blue {
+            border-color: blue;
+            background-color: blue;
+        }
+
+        ​ .blue:hover {
+            background-color: darkblue;
+            border-color: darkblue;
+        }
+
+        ​ a {
+            padding: 0 1rem;
+        }
+
+        ​ .row>.col>span>a:nth-of-type(1) {
+            border-right: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Reserve a Table!</h1>
+            <h3>The hottest restaurant in town!</h3>
+            <hr>
+            <a href="/api/tables"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View
+                    Tables</button></a>
+
+            <a href="/"><button class="btn btn-danger btn-lg"><span class="fas fa-home"></span> </button></a>
+
+        </div>
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3><strong>Make a Reservation</strong></h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" role="form">
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" class="form-control" id="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">E-Mail Address</label>
+                                <input type="text" class="form-control" id="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="uniqueID">Unique ID</label>
+                                <input type="text" class="form-control" id="uniqueID">
+                            </div>
+
+                        </form>
+                        <br>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span
+                                    class="fa fa-fire"></span>Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $("#add-btn").on("click", function (event) {
+            event.preventDefault();
+            var newReservation = {
+                name: $("#name").val().trim(),
+                phone: $("#phone").val().trim(),
+                email: $("#email").val().trim(),
+                uniqueID: $("#uniqueID").val().trim(),
+            };
+
+            // Question: What does this code do??
+            $.post("/api/tables", newReservation)
+                .then(function (data) {
+                    console.log("reserve.html", data);
+                    alert("Making Reservation...");
+                });
+        });
+    </script>
+</body>
+
+
+</html>
